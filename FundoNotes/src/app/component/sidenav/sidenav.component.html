@@ -1,0 +1,39 @@
+<div class="sidenav">
+    <button class="sidenav-button" [ngClass]="{'active': activeButton === 'notes'}"
+        (click)="onButtonClick('notes', '/dashboard/displayallnotes')">
+        <button mat-icon-button aria-label="Notes">
+            <mat-icon svgIcon="note-icon"></mat-icon>
+        </button>
+        <h3>Notes</h3>
+    </button>
+
+    <button class="sidenav-button" [ngClass]="{'active': activeButton === 'reminders'}">
+        <button mat-icon-button aria-label="Reminders">
+            <mat-icon svgIcon="reminder-icon"></mat-icon>
+        </button>
+        <h3>Reminders</h3>
+    </button>
+
+    <button class="sidenav-button" [ngClass]="{'active': activeButton === 'Reminder'}">
+        <button mat-icon-button aria-label="Reminder button" matTooltip="Reminder">
+            <mat-icon svgIcon="edit-icon"></mat-icon>
+        </button>
+        <h3>Edit labels</h3>
+    </button>
+
+    <button class="sidenav-button" [ngClass]="{'active': activeButton === 'archive'}"
+        (click)="onButtonClick('archive', '/dashboard/archive')">
+        <button mat-icon-button aria-label="Archive">
+            <mat-icon svgIcon="archive-icon"></mat-icon>
+        </button>
+        <h3>Archive</h3>
+    </button>
+
+    <button class="sidenav-button" [ngClass]="{'active': activeButton === 'trash'}"
+        (click)="onButtonClick('trash', '/dashboard/trash')">
+        <button mat-icon-button aria-label="Trash">
+            <mat-icon svgIcon="trash-icon"></mat-icon>
+        </button>
+        <h3>Trash</h3>
+    </button>
+</div>

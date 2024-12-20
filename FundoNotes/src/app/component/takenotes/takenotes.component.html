@@ -1,0 +1,62 @@
+<div class="takenotes">
+    <ng-container *ngIf="showEnterNote; else addNoteTemplate">
+        <div class="enternote" (click)="toggleNotes()">
+            <div>Take a note...</div>
+            <div class="icons">
+                <button mat-icon-button aria-label="reminder button" matTooltip="Reminder">
+                    <mat-icon svgIcon="tick-icon" aria-hidden="false" aria-label="reminder icon"></mat-icon>
+                </button>
+                <button mat-icon-button aria-label="reminder button" matTooltip="Reminder">
+                    <mat-icon svgIcon="edit-icon" aria-hidden="false" aria-label="reminder icon"></mat-icon>
+                </button>
+                <button mat-icon-button aria-label="reminder button" matTooltip="Reminder">
+                    <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="reminder icon"></mat-icon>
+                </button>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #addNoteTemplate>
+        <div class="addnote">
+            <div class="Title">
+                <input type="text" placeholder="Title" [(ngModel)]="noteTitle" class="title-input" />
+                <button mat-icon-button aria-label="reminder button" matTooltip="Reminder">
+                    <mat-icon svgIcon="pin-icon" aria-hidden="false" aria-label="reminder icon"></mat-icon>
+                </button>
+            </div>
+            <textarea placeholder="Take a note..." [(ngModel)]="noteContent" class="note-textarea">
+            </textarea>
+            <div class="below-icons">
+                <div class="takenotes-icons">
+                    <button mat-icon-button aria-label="reminder button" matTooltip="Reminder">
+                        <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="reminder icon"></mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="collabrator button" matTooltip="Collabrator">
+                        <mat-icon svgIcon="collabrator-icon" aria-hidden="false"
+                            aria-label="collabrator icon"></mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="color button" matTooltip="Background Color Options">
+                        <mat-icon svgIcon="color-palatte-icon" aria-hidden="false"
+                            aria-label="color button icon"></mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="img button" matTooltip="Add Image">
+                        <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="img button" matTooltip="Add Image">
+                        <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="img button" matTooltip="Add Image">
+                        <mat-icon svgIcon="more-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="img button" matTooltip="Add Image">
+                        <mat-icon svgIcon="undo-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="img button" matTooltip="Add Image">
+                        <mat-icon svgIcon="redo-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
+                    </button>
+                </div>
+                <div (click)="addNote()" (click)="toggleNotes()" style="cursor: pointer;">Close</div>
+            </div>
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,11 @@
+<div class="displayallnote">
+    <div><app-takenotes (updateList)="handleNotesList($event)"></app-takenotes></div>
+    <div style="display: flex; flex-wrap: wrap; margin-left: 8vw;">
+
+        <div *ngFor="let note of notesList | search : searchQuery" style="width: fit-content;">
+
+            <app-displaynote [noteDetails]="note" (updateList)="handleNotesList($event)" [container]="'notes'"></app-displaynote>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

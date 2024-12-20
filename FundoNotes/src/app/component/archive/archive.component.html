@@ -1,0 +1,8 @@
+<div style="display: flex; flex-wrap: wrap;">
+    <div *ngIf="archiveList.length==0">
+        <h1>No archives notes</h1>
+    </div>
+    <div *ngFor="let archive of archiveList" style="width: fit-content;">
+        <app-displaynote [noteDetails]="archive" (updateList)="handleArchiveNotesList($event)"  [container]="'archive'"></app-displaynote>
+    </div>
+</div>

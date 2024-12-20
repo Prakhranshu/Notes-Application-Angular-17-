@@ -1,0 +1,29 @@
+.sidenav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20vw;
+}
+.sidenav-button{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    // background-color: rgb(254, 239, 195);
+    border: none;
+    border-top-right-radius: 10vw;
+    border-bottom-right-radius: 10vw;
+    cursor: pointer;
+    // transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+// .sidenav-button:hover {
+//     background-color: #00000039; /* Highlight color on hover */
+//     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+// }
+
+.sidenav-button:hover {
+    background-color: #e8f0fe; /* Hover color */
+  }
+  
+  .sidenav-button.active {
+    background-color: rgb(254, 239, 195); /* Highlight color for selected button */
+  }

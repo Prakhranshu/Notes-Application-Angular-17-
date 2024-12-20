@@ -1,3 +1,73 @@
-<body class="body">
-    
-</body>
+<div class="signup">
+    <div class="signup-outterbox">
+        <div class="signup-upperbox">
+            <div class="signup-leftbox">
+                <h1 style="color: rgb(222, 222, 23);">Fundo</h1>
+                <h1>Create your Fundo Account</h1>
+
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                    <div class="signup-name">
+                      <mat-form-field class="signup-example-full-width" appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput type="text" placeholder="Enter your firstname" formControlName="firstName">
+                      </mat-form-field>
+                  
+                      <mat-form-field class="signup-example-full-width" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput type="text" placeholder="Enter your lastname" formControlName="lastName">
+                      </mat-form-field>
+                    </div>
+                  
+                    <div>
+                      <mat-form-field class="signup-example-full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="text" placeholder="Enter your email" formControlName="email">
+                      </mat-form-field>
+                      <p>You can use letters, numbers & periods</p>
+                    </div>
+                  
+                    <div class="signup-password">
+                      <mat-form-field class="signup-example-full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Enter your password" formControlName="password">
+                      </mat-form-field>
+                  
+                      <mat-form-field class="signup-example-full-width" appearance="outline">
+                        <mat-label>Confirm</mat-label>
+                        <input matInput type="password" placeholder="Confirm your password" formControlName="confirmPassword">
+                      </mat-form-field>
+                    </div>
+                    <p>Use 8 or more characters with a mix of letters, numbers & symbols</p>
+                  
+                    <div class="signup-submit1">
+                      <h4 style="color: indigo"><b>Sign in instead</b></h4>
+                      <button mat-raised-button color="primary" type="submit">Sign Up</button>
+                    </div>
+                  </form>
+                
+            </div>
+            <div class="signup-rightbox">
+                <img src="../../../assets/Screenshot 2024-12-07 010715.png">
+                <div class="signup-text">
+                    <h1>One account. All of fundo</h1>
+                    <h1>working for you.</h1>
+                </div>
+            </div>
+        </div>
+        <div class="signup-belowbox">
+            <div class="language">
+              <select id="signup-cars">
+                <option value="volvo">English (United States)</option>
+                <option value="saab">Hindi (India)</option>
+                <option value="opel">Spanish</option>
+                <option value="audi">French</option>
+              </select>
+            </div>
+            <div class="signup-help">
+                <h5>Help</h5>
+                <h5>Privacy</h5>
+                <h5>Terms</h5>
+            </div>
+        </div>
+    </div>
+</div>

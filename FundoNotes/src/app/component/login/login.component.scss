@@ -1,4 +1,4 @@
-.signup{
+.login{
     height: 100%;
     width: 100%;
     display: flex;
@@ -6,59 +6,36 @@
     justify-content: center;
     align-items: center;
 }
-.signup-upperbox{
-    padding-top:7%;
-    padding-left: 7%;
-    padding-bottom: 7%;
+.login-outterbox{
+    width:30%;
+}
+.login-upperbox{
+    padding: 10%;
+    width: 82%;
     // background-color: aqua;
     display: flex;
-    position: relative;
+    flex-direction: column;
     border: 1px solid;
     border-radius: .5vw;
 }
-.signup-leftbox{
+.login-fundo{
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    align-items: center;
 }
-input{
-    width: 30%;
-    height: 30%;
-}
-.signup-name,.signup-password{
-    display: flex;
-    gap: 20%;
-}
-#name,#password{
-    height: 6vh;
-    width: 10vw;
-}
-.signup-example-full-width{
+.login-example-full-width{
     width: 100%;
-    margin-top: 3%;
 }
-.signup-submit1{
+.login-submit{
+    display: flex;
     justify-content: space-between;
-    display: flex;
 }
-.signup-rightbox{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 8%;
-}
-.signup-text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.signup-belowbox{
+.login-lowerbox{
     display: flex;
     justify-content: space-between;
 }
 
-#signup-cars {
+#login-cars {
     width: 100%; /* Adjust width as needed */
     height: 130%; /* Adjust height as needed */
     padding: 5px 10px; /* Inner spacing */
@@ -71,12 +48,14 @@ input{
     // -webkit-appearance: none; /* For Safari */
     // -moz-appearance: none; /* For Firefox */
   }
+  
+//   select:focus {
+//     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Adds a subtle focus shadow */
+//   }
 
-.signup-help{
-    width: 15%;
+.login-help{
+    width: 30%;
     // background-color: pink;
     display: flex;
-    // justify-content: space-between;
-    gap: 12%;
+    justify-content: space-between;
 }
-

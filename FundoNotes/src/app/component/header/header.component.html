@@ -1,0 +1,59 @@
+<div class="header">
+    <button mat-icon-button aria-label="reminder button" matTooltip="Reminder" (click)="onMenuClick()">
+        <mat-icon svgIcon="menu-icon" aria-hidden="false" aria-label="reminder icon"></mat-icon>
+    </button>
+    <div class="header-logo">
+        <img class="header-logo-image" src="../../../assets/keeplogo.png">
+        <div>
+            <div class="header-title">Keep</div>
+        </div>
+    </div>
+
+    <div class="header-search-container">
+        <button mat-icon-button id="search" aria-label="img button" matTooltip="Add Image">
+            <mat-icon svgIcon="search-icon" style="color: #9e9e9e;"></mat-icon>
+        </button>
+        <input type="text" class="header-search-input" [(ngModel)]="searchQuery" (input)="handleSearchQuery()"
+            placeholder="Search">
+
+    </div>
+    <div class="header-three">
+        <button mat-icon-button id="search" aria-label="img button" matTooltip="Add Image">
+            <mat-icon svgIcon="restore-icon" style="color: #9e9e9e;"></mat-icon>
+        </button>
+        <button mat-icon-button id="search" aria-label="img button" matTooltip="Add Image">
+            <mat-icon svgIcon="list-view-icon" style="color: #9e9e9e;"></mat-icon>
+        </button>
+        <button mat-icon-button id="search" aria-label="img button" matTooltip="Add Image">
+            <mat-icon svgIcon="setting-icon" style="color: #9e9e9e;"></mat-icon>
+        </button>
+    </div>
+    <div class="header-usericon">
+        <button mat-icon-button id="search" aria-label="img button" matTooltip="Add Image">
+            <mat-icon svgIcon="other-menu-icon" style="color: #9e9e9e;"></mat-icon>
+        </button>
+        <!-- <img src="../../../assets/google icon.png" class="header-userlogo"> -->
+        <button style="border: none; background-color: transparent; cursor: pointer;" [matMenuTriggerFor]="logoutMenu">
+            <div class="header-initial">
+                <div>{{ userInitial }}</div>
+            </div>
+        </button>
+        <mat-menu #logoutMenu="matMenu">
+            <div class="header-logoutmenu">
+                <div class="header-userinfo">
+                    <button style="border: none; background-color: transparent; cursor: pointer;" [matMenuTriggerFor]="logoutMenu">
+                        <div class="header-initial">
+                            <div>{{ userInitial }}</div>
+                        </div>
+                    </button>
+                    <p><strong>{{ userName }}</strong></p>
+                    <p>{{ userEmail }}</p>
+                    <button mat-raised-button color="primary" (click)="LogOut()">LogOut</button>
+                </div>
+            </div>
+        </mat-menu>
+    </div>
+
+
+
+</div>

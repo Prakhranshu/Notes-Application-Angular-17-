@@ -1,0 +1,85 @@
+<div class="displaynote">
+  <div class="displaynote-card">
+    <div class="displaynote-title">
+      {{noteDetails?.title |uppercase}}
+    </div>
+    <div class="displaynote-note">
+      {{noteDetails?.description}}
+    </div>
+    <div class="displaynote-icons">
+      <!-- For Trash Container -->
+      <ng-container *ngIf="container === 'trash'; else notTrashIcons">
+        <button mat-icon-button aria-label="Delete forever button" matTooltip="Delete forever"
+          (click)="handleNotesIconClick('deleteForever')">
+          <mat-icon svgIcon="delete-forever-icon" aria-hidden="false"></mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Restore button" matTooltip="Restore"
+          (click)="handleNotesIconClick('untrash')">
+          <mat-icon svgIcon="restore-icon" aria-hidden="false"></mat-icon>
+        </button>
+      </ng-container>
+
+      <!-- For Other Containers -->
+      <ng-template #notTrashIcons>
+        <!-- Other Icons -->
+        <button mat-icon-button aria-label="Reminder button" matTooltip="Reminder">
+          <mat-icon svgIcon="reminder-icon"></mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Collaborator button" matTooltip="Collaborator">
+          <mat-icon svgIcon="collabrator-icon"></mat-icon>
+        </button>
+
+
+        <button mat-icon-button aria-label="Background color button" matTooltip="Background Color" [matMenuTriggerFor]="colorMenu">
+          <mat-icon svgIcon="color-palatte-icon"></mat-icon>
+        </button>
+        <mat-menu #colorMenu="matMenu">
+          <div class="color-palate-cnt">
+            <div class="col1" matTooltip="Default" (click)="handleNotesIconClick('#FFFFFF')"></div>
+            <div class="col2" matTooltip="Coral" (click)="handleNotesIconClick('#FAAFA8')"></div>
+            <div class="col3" matTooltip="Peach" (click)="handleNotesIconClick('#F39F76')"></div>
+            <div class="col4" matTooltip="Sand" (click)="handleNotesIconClick('#FFF8B8')"></div>
+            <div class="col5" matTooltip="Mint" (click)="handleNotesIconClick('#E2F6D3')"></div>
+            <div class="col6" matTooltip="Sage" (click)="handleNotesIconClick('#B4DDD3')"></div>
+            <div class="col7" matTooltip="Fog" (click)="handleNotesIconClick('#D4E4ED')"></div>
+            <div class="col8" matTooltip="Storm" (click)="handleNotesIconClick('#AECCDC')"></div>
+            <div class="col9" matTooltip="Dusk" (click)="handleNotesIconClick('#D3BFDB')"></div>
+            <div class="col10" matTooltip="Blossom" (click)="handleNotesIconClick('#F6E2DD')"></div>
+            <div class="col11" matTooltip="Clay" (click)="handleNotesIconClick('#E9E3D4')"></div>
+            <div class="col12" matTooltip="Chalk" (click)="handleNotesIconClick('#EFEFF1')"></div>
+          </div>
+        </mat-menu>
+
+
+        <button mat-icon-button aria-label="Add Image button" matTooltip="Add Image">
+          <mat-icon svgIcon="img-icon"></mat-icon>
+        </button>
+
+        <!-- Replace Archive with Unarchive for Archive Container -->
+        <button mat-icon-button *ngIf="container !== 'archive'; else unarchiveIcon" aria-label="Archive button"
+          matTooltip="Archive" (click)="handleNotesIconClick('archive')">
+          <mat-icon svgIcon="archive-icon" aria-hidden="false"></mat-icon>
+        </button>
+        <ng-template #unarchiveIcon>
+          <button mat-icon-button aria-label="Unarchive button" matTooltip="Unarchive"
+            (click)="handleNotesIconClick('unarchive')">
+            <mat-icon svgIcon="unarchive-icon" aria-hidden="false"></mat-icon>
+          </button>
+        </ng-template>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="More options">
+          <mat-icon svgIcon="more-icon"></mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="handleNotesIconClick('trash')">Delete note</button>
+          <button mat-menu-item>Add label</button>
+          <button mat-menu-item>Add drawing</button>
+          <button mat-menu-item>Make a copy</button>
+          <button mat-menu-item>Show checkboxes</button>
+          <button mat-menu-item>Copy to Google Docs</button>
+          <button mat-menu-item>Version history</button>
+        </mat-menu>
+      </ng-template>
+    </div>
+  </div>
+</div>

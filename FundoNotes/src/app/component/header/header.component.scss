@@ -1,0 +1,94 @@
+.header{
+    height: 10%;
+    // background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // border-bottom:#333333d3;
+    border: 1px solid #3333332b;
+}
+.header-logo{
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    // margin-left: -4%;
+}
+.header-logo-image{
+  height: 8vh;
+}
+.header-title{
+  font-size: 200%; 
+  color: #00000082;
+  font-weight:400;
+}
+.header-search-container {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    background-color: #cdd5dd5f; /* Light grey background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 15px; /* Space inside the div */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 150%; /* Full-width container */
+    max-width: 700px; /* Limit max width */
+  }
+  // #search {
+  //   // font-size: 20px;
+  //   // margin-right: 10px; /* Spacing between icon and input */
+  // }
+.header-search-input {
+    border: none; /* Remove border */
+    outline: none; /* Remove focus outline */
+    background: none; /* Transparent background */
+    width: 100%; /* Full width */
+    font-size: 16px; /* Font size */
+    color: #333; /* Dark text */
+  }
+  .header-search-input::placeholder {
+    color: #9e9e9e; /* Placeholder text color */
+  }
+  .header-three{
+    display: flex;
+    align-items: center;
+    // margin-right: -10%;
+  }
+  .header-usericon{
+    display: flex;
+    align-items: center;
+    // margin-right: -7%;
+    // padding-right: -30%;
+  }
+  // .header-userlogo{
+  //   border-radius: 50%;
+  //   height: 40%;
+  //   width: 40%;
+  // }
+  .header-initial{
+    width: 2.7vw;
+    height: 6vh;
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color:aqua;
+  }
+
+  .header-userinfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // width: 30vw;
+    // height: 30vw;
+  }
+
+
+  @media screen and (max-width: 768px){
+    .header-title{
+      display: none;
+    }
+    .header-three{
+      display: none;
+    }
+  }
