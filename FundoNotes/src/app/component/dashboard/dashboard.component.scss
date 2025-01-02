@@ -1,0 +1,14 @@
+::ng-deep .app-dashboard-cnt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.dashboard-icons{
+    display: flex;
+    flex-direction: column;
+}
+.dashboard-content{
+    display: flex;
+}

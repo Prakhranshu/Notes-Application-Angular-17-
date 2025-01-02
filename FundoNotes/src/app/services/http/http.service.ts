@@ -9,7 +9,7 @@ export class HttpService {
   constructor(private httpClient:HttpClient) { }
 
   postService(url:string,reqData:any,token:boolean=false,httpOptions:any={}) {
-    console.log("sdfbgn");
+    // console.log("sdfbgn");
     
     return this.httpClient.post(url,reqData,token && httpOptions);
   }

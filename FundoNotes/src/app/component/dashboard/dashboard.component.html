@@ -1,7 +1,24 @@
 <app-header (menuToggle)="drawer.toggle()"></app-header>
 <mat-drawer-container class="example-container" [hasBackdrop]="false">
-    <mat-drawer #drawer [mode]="'over'"><app-sidenav></app-sidenav></mat-drawer>
-    <mat-drawer-content>
+    <mat-drawer #drawer [mode]="'over'" (mouseleave)="drawer.toggle()"><app-sidenav></app-sidenav></mat-drawer>
+    <mat-drawer-content class="dashboard-content">
+        <div class="dashboard-icons" (mouseover)="drawer.toggle()">
+            <button mat-icon-button id="search" aria-label="img button" matTooltip="Add Image">
+                <mat-icon svgIcon="note-icon" style="color: #9e9e9e;"></mat-icon>
+            </button>
+            <button mat-icon-button id="search" aria-label="img button" matTooltip="Add Image">
+                <mat-icon svgIcon="reminder-icon" style="color: #9e9e9e;"></mat-icon>
+            </button>
+            <button mat-icon-button id="search" aria-label="img button" matTooltip="Add Image">
+                <mat-icon svgIcon="edit-icon" style="color: #9e9e9e;"></mat-icon>
+            </button>
+            <button mat-icon-button id="search" aria-label="img button" matTooltip="Add Image">
+                <mat-icon svgIcon="archive-icon" style="color: #9e9e9e;"></mat-icon>
+            </button>
+            <button mat-icon-button id="search" aria-label="img button" matTooltip="Add Image">
+                <mat-icon svgIcon="trash-icon" style="color: #9e9e9e;"></mat-icon>
+            </button>
+        </div>
         <router-outlet></router-outlet>
     </mat-drawer-content>
 </mat-drawer-container>

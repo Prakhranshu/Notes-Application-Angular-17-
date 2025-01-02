@@ -1,6 +1,6 @@
 <div class="takenotes">
     <ng-container *ngIf="showEnterNote; else addNoteTemplate">
-        <div class="enternote" (click)="toggleNotes()">
+        <div class="enternote" (click)="addNote('toggle')">
             <div>Take a note...</div>
             <div class="icons">
                 <button mat-icon-button aria-label="reminder button" matTooltip="Reminder">
@@ -17,7 +17,7 @@
     </ng-container>
 
     <ng-template #addNoteTemplate>
-        <div class="addnote">
+        <div class="addnote" [style.backgroundColor]="color">
             <div class="Title">
                 <input type="text" placeholder="Title" [(ngModel)]="noteTitle" class="title-input" />
                 <button mat-icon-button aria-label="reminder button" matTooltip="Reminder">
@@ -35,15 +35,33 @@
                         <mat-icon svgIcon="collabrator-icon" aria-hidden="false"
                             aria-label="collabrator icon"></mat-icon>
                     </button>
-                    <button mat-icon-button aria-label="color button" matTooltip="Background Color Options">
+                    <button mat-icon-button aria-label="color button" matTooltip="Background Color Options" [matMenuTriggerFor]="colorMenu">
                         <mat-icon svgIcon="color-palatte-icon" aria-hidden="false"
                             aria-label="color button icon"></mat-icon>
                     </button>
+                    <mat-menu #colorMenu="matMenu">
+                        <div class="color-palate-cnt">
+                          <div class="col1" matTooltip="Default" (click)="colorvalue('#FFFFFF')"></div>
+                          <div class="col2" matTooltip="Coral" (click)="colorvalue('#FAAFA8')"></div>
+                          <div class="col3" matTooltip="Peach" (click)="colorvalue('#F39F76')"></div>
+                          <div class="col4" matTooltip="Sand" (click)="colorvalue('#FFF8B8')"></div>
+                          <div class="col5" matTooltip="Mint" (click)="colorvalue('#E2F6D3')"></div>
+                          <div class="col6" matTooltip="Sage" (click)="colorvalue('#B4DDD3')"></div>
+                          <div class="col7" matTooltip="Fog" (click)="colorvalue('#D4E4ED')"></div>
+                          <div class="col8" matTooltip="Storm" (click)="colorvalue('#AECCDC')"></div>
+                          <div class="col9" matTooltip="Dusk" (click)="colorvalue('#D3BFDB')"></div>
+                          <div class="col10" matTooltip="Blossom" (click)="colorvalue('#F6E2DD')"></div>
+                          <div class="col11" matTooltip="Clay" (click)="colorvalue('#E9E3D4')"></div>
+                          <div class="col12" matTooltip="Chalk" (click)="colorvalue('#EFEFF1')"></div>
+                        </div>
+                      </mat-menu>
+
+
                     <button mat-icon-button aria-label="img button" matTooltip="Add Image">
                         <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
                     </button>
-                    <button mat-icon-button aria-label="img button" matTooltip="Add Image">
-                        <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
+                    <button mat-icon-button aria-label="img button" matTooltip="Add Image" (click)="archive()">
+                        <mat-icon svgIcon="archive-icon"  aria-hidden="false" aria-label="add image icon"></mat-icon>
                     </button>
                     <button mat-icon-button aria-label="img button" matTooltip="Add Image">
                         <mat-icon svgIcon="more-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
@@ -55,7 +73,7 @@
                         <mat-icon svgIcon="redo-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
                     </button>
                 </div>
-                <div (click)="addNote()" (click)="toggleNotes()" style="cursor: pointer;">Close</div>
+                <div (click)="addNote('add')" style="cursor: pointer;">Close</div>
             </div>
         </div>
     </ng-template>

@@ -67,6 +67,28 @@ export class NotesService {
     }
     return this.httpservice.postService(fullUrl,reqData,true,header);
   }
-  
 
+  changecolor(reqData: any) {
+    const fullUrl = `https://fundoonotes.incubation.bridgelabz.com/api/notes/changesColorNotes?access_token=${this.token}`;
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    console.log(this.token);
+    return this.httpservice.postService(fullUrl, reqData, true, header);
+  }
+
+  updateNote(reqData: any) {
+    const fullUrl = `https://fundoonotes.incubation.bridgelabz.com/api/notes/updateNotes?access_token=${this.token}`;
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    console.log(this.token);
+    return this.httpservice.postService(fullUrl, reqData, true, header);
+  }
 }

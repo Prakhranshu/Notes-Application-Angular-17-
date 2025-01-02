@@ -3,6 +3,8 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { REMINDER_ICON, COLLABRATOR_ICON, COLOR_PALATTE_ICON, IMG_ICON, ARCHIVE_ICON, MORE_ICON, DELETE_FOREVER_ICON, RESTORE_ICON, UNARCHIVE_ICON, EDIT_ICON, PIN_ICON, REDO_ICON, TICK_ICON, UNDO_ICON } from '../../../assets/svg-icons';
 import { NotesService } from '../../services/notes/notes.service';
+import { MatDialog } from '@angular/material/dialog';
+import { TakenotesComponent } from '../takenotes/takenotes.component';
 
 @Component({
   selector: 'app-displaynote',
@@ -16,7 +18,7 @@ export class DisplaynoteComponent {
 
 
 
-  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, private notesService: NotesService) {
+  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, private notesService: NotesService, private dialog: MatDialog) {
     iconRegistry.addSvgIconLiteral('reminder-icon', sanitizer.bypassSecurityTrustHtml(REMINDER_ICON));
     iconRegistry.addSvgIconLiteral('collabrator-icon', sanitizer.bypassSecurityTrustHtml(COLLABRATOR_ICON));
     iconRegistry.addSvgIconLiteral('color-palatte-icon', sanitizer.bypassSecurityTrustHtml(COLOR_PALATTE_ICON));
@@ -33,7 +35,7 @@ export class DisplaynoteComponent {
     iconRegistry.addSvgIconLiteral('pin-icon', sanitizer.bypassSecurityTrustHtml(PIN_ICON));
   }
 
-  handleNotesIconClick(action: string) {
+  handleNotesIconClick(action: string, color: string = '#ffffff') {
     //based on action call the api
     const noteId = this.noteDetails?.id; // Fetch the note ID
     let requestData: any = {};
@@ -104,9 +106,36 @@ export class DisplaynoteComponent {
         });
         break;
 
+      case 'color':
+        this.noteDetails.color = color.toString();
+        requestData = { color: this.noteDetails.color, noteIdList: [noteId] };
+        this.notesService.changecolor(requestData).subscribe({
+          next: (response: any) => {
+            console.log('color changed:', response);
+            this.updateList.emit({ data: this.noteDetails, action });
+          },
+          error: (err: any) => {
+            console.log('Error', err);
+          }
+        });
+        break;
+
       default:
         console.log('Unhandled action:', action);
         // this.updateList.emit({ data: this.noteDetails, action: action })
     }
+  }
+
+  handleEditNote(){
+    const dialogref = this.dialog.open(TakenotesComponent, {
+      data: {
+        showEnterNote: false,
+        noteDetails: this.noteDetails
+      }
+    });
+    dialogref.afterClosed().subscribe(result => {
+      console.log(result);
+      this.updateList.emit({ data: result, action: 'edit'})
+    });
   }
 }

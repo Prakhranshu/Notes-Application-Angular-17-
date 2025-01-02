@@ -48,8 +48,11 @@ export class DisplayallnotesComponent {
     else if (action == "trash" || action == "archive") {
       this.notesList = this.notesList.filter((note: any) => note.id != data.id)
     }
-    else if (action == 'restore') {
-      this.notesList = [data, ...this.notesList]
+    else if (action == "color" || action == "edit") {
+      this.notesList = this.notesList.map((note)=>{
+        if( note.id == data.id) return data;
+        return note;
+      })
     }
   }
 

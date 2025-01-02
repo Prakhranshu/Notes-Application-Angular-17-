@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { REMINDER_ICON, COLLABRATOR_ICON, COLOR_PALATTE_ICON, IMG_ICON, ARCHIVE_ICON, MORE_ICON, DELETE_FOREVER_ICON, RESTORE_ICON, UNARCHIVE_ICON, REDO_ICON, UNDO_ICON, TICK_ICON, EDIT_ICON, PIN_ICON, LIST_VIEW_ICON, OTHER_MENU_ICON, MENU_ICON, SEARCH_ICON, SETTING_ICON } from '../../../assets/svg-icons';
+import { REMINDER_ICON, COLLABRATOR_ICON, COLOR_PALATTE_ICON, IMG_ICON, ARCHIVE_ICON, MORE_ICON, DELETE_FOREVER_ICON, RESTORE_ICON, UNARCHIVE_ICON, REDO_ICON, UNDO_ICON, TICK_ICON, EDIT_ICON, PIN_ICON, LIST_VIEW_ICON, OTHER_MENU_ICON, MENU_ICON, SEARCH_ICON, SETTING_ICON, REFRESH_ICON } from '../../../assets/svg-icons';
 import { DataServiceService } from '../../services/data/data-service.service';
 import { Router } from '@angular/router';
 
@@ -20,7 +20,7 @@ export class HeaderComponent {
 
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, private dataService: DataServiceService, private router: Router) {
     iconRegistry.addSvgIconLiteral('search-icon', sanitizer.bypassSecurityTrustHtml(SEARCH_ICON));
-    iconRegistry.addSvgIconLiteral('collabrator-icon', sanitizer.bypassSecurityTrustHtml(COLLABRATOR_ICON));
+    iconRegistry.addSvgIconLiteral('refresh-icon', sanitizer.bypassSecurityTrustHtml(REFRESH_ICON));
     iconRegistry.addSvgIconLiteral('color-palatte-icon', sanitizer.bypassSecurityTrustHtml(COLOR_PALATTE_ICON));
     iconRegistry.addSvgIconLiteral('img-icon', sanitizer.bypassSecurityTrustHtml(IMG_ICON));
     iconRegistry.addSvgIconLiteral('setting-icon', sanitizer.bypassSecurityTrustHtml(SETTING_ICON));

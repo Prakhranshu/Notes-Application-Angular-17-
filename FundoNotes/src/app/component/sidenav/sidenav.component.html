@@ -4,21 +4,21 @@
         <button mat-icon-button aria-label="Notes">
             <mat-icon svgIcon="note-icon"></mat-icon>
         </button>
-        <h3>Notes</h3>
+        <div>Notes</div>
     </button>
 
     <button class="sidenav-button" [ngClass]="{'active': activeButton === 'reminders'}">
         <button mat-icon-button aria-label="Reminders">
             <mat-icon svgIcon="reminder-icon"></mat-icon>
         </button>
-        <h3>Reminders</h3>
+        <div>Reminders</div>
     </button>
 
     <button class="sidenav-button" [ngClass]="{'active': activeButton === 'Reminder'}">
         <button mat-icon-button aria-label="Reminder button" matTooltip="Reminder">
             <mat-icon svgIcon="edit-icon"></mat-icon>
         </button>
-        <h3>Edit labels</h3>
+        <div>Edit labels</div>
     </button>
 
     <button class="sidenav-button" [ngClass]="{'active': activeButton === 'archive'}"
@@ -26,7 +26,7 @@
         <button mat-icon-button aria-label="Archive">
             <mat-icon svgIcon="archive-icon"></mat-icon>
         </button>
-        <h3>Archive</h3>
+        <div>Archive</div>
     </button>
 
     <button class="sidenav-button" [ngClass]="{'active': activeButton === 'trash'}"
@@ -34,6 +34,6 @@
         <button mat-icon-button aria-label="Trash">
             <mat-icon svgIcon="trash-icon"></mat-icon>
         </button>
-        <h3>Trash</h3>
+        <div>Trash</div>
     </button>
 </div>

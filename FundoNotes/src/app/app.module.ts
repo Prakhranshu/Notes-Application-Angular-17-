@@ -24,6 +24,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { SearchPipe } from './pipe/search.pipe';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { SearchPipe } from './pipe/search.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     MatMenuModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
